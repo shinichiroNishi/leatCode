@@ -1,0 +1,2 @@
+# leatCode
+leatCode on scala
