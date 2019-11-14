@@ -1,0 +1,17 @@
+/**
+ * Definition for singly-linked list.
+ * class ListNode(var _x: Int = 0) {
+ *   var next: ListNode = null
+ *   var x: Int = _x
+ * }
+ */
+import scala.collection.immutable
+object Solution {
+    def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
+      val rev1 = l1.reverse.map(x=>x.toString).foldLeft(""){(prev,y)=> prev + y}.toInt
+      val rev2 = l2.reverse.map(x=>x.toString).foldLeft(""){(prev,y)=> prev + y}.toInt 
+      rev1 + rev2  
+    }
+}
+
+解き方がわかりません
