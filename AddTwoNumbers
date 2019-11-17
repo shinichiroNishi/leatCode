@@ -15,3 +15,38 @@ object Solution {
 }
 
 解き方がわかりません
+
+/**
+ * Definition for singly-linked list.
+ * class ListNode(var _x: Int = 0) {
+ *   var next: ListNode = null
+ *   var x: Int = _x
+ * }
+ */
+object Solution {
+    def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
+        var x:Seq[Int] = Seq.empty
+        var y:Seq[Int] = Seq.empty
+        x = x:+l1.x
+        y = y:+l2.x
+        var tmp1 = l1.next
+        var tmp2 = l2.next
+        while(tmp1!=null || tmp2!=null){
+            x = x:+ tmp1.x
+            y = y:+ tmp2.x
+            tmp1 = tmp1.next
+            tmp2 = tmp2.next
+        }
+        println(x,y)
+        val v1 = x.reverse.map(elm => elm.toString).foldLeft(""){(prev,v) => prev + v}.toInt
+        val v2 = y.reverse.map(elm => elm.toString).foldLeft(""){(prev,v) => prev + v}.toInt
+        val result = (v1 + v2).toString.reverse
+        var a1 = ListNode(0)
+        for(res <- result){
+            println(res)
+            a1 = ListNode(res)
+            println(a1)
+        }
+        a1
+    }
+}
